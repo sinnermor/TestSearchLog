@@ -1,7 +1,7 @@
 
 import re, os
 import glob
-from pip._vendor import requests
+import requests
 
 dirrect = ""
 
