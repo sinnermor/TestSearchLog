@@ -32,8 +32,7 @@ def get_auth(login, password):
     session = requests.session()
     data = {"username": login, "pass": password}
     url = "test.server.111"
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko)  Safari/537.36'}
+    headers = {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}
     r = session.post(url, data=data, headers=headers)
     if r.status != 200:
         print("Auth is not finished")
@@ -50,8 +49,6 @@ def getsubs(dir, mask):
 
 # Find files matched with mask in some dirrectory
 def find_files_array(mask, dir):
-    te = os.chdir('D:\Data')
-    print(te)
     filename_mask = mask + '*'
     filelist = []
     # Here we find files array which mached with mask from current dir for win
